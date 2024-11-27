@@ -1,0 +1,78 @@
+/* Add.css */
+.add-todo {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 245, 245, 0.4);
+    backdrop-filter: blur(40px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+}
+
+.add-todo h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+.add-todo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-todo-form input,
+.add-todo-form select,
+.add-todo-form button {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-todo-form input,
+.add-todo-form select {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.add-todo-form input:focus,
+.add-todo-form select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+.add-todo-form button {
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-todo-form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+.add-todo-form button[type="submit"]:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+}
+
+.add-todo-form button[type="button"] {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.add-todo-form button[type="button"]:hover {
+    background-color: #c82333;
+    transform: scale(1.02);
+}
+
+.add-todo-form button:active {
+    transform: scale(0.98);
+}

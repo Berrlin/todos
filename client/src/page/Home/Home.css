@@ -1,0 +1,202 @@
+.todo {
+    width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-top p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.todo-top .create{
+    background-color: #0c90fd;
+    color: #fff;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.todo-username {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-username .icon-logout {
+    color: #f44336;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.todo-top .create {
+    background-color: #0c90fd;
+    color: #fff;
+    padding: 7px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.todo-top .create:hover {
+    background-color: #2291ed;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.todo-top .list {
+    font-size: 30px;
+    color: #00fbea;
+}
+
+/* Tiêu đề bảng */
+.todo-title {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Danh sách công việc */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Mỗi công việc */
+.todo-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px 0px;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.todo-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.todo-item p {
+    margin: 0;
+    text-align: center;
+}
+
+/* Nút sửa và xóa */
+.icon-update,
+.icon-delete {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.icon-update {
+    color: #2196f3;
+}
+
+.icon-update:hover {
+    transform: scale(1.2);
+}
+
+.icon-delete {
+    color: #f44336;
+}
+
+.icon-delete:hover {
+    transform: scale(1.2);
+}
+
+/* Priority với màu sắc */
+.todo-item .priority {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Low Priority */
+  .todo-item.low .priority {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  /* Medium Priority */
+  .todo-item.medium .priority {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  /* High Priority */
+  .todo-item.high .priority {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+
+/* Trạng thái với màu sắc */
+.todo-item .status {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Pending */
+.todo-item.pending .status {
+    background-color: #ffeeba;
+    color: #856404;
+}
+
+/* In-Progress */
+.todo-item.in-progress .status {
+    background-color: #bee5eb;
+    color: #0c5460;
+}
+
+/* Completed */
+.todo-item.completed .status {
+    background-color: #c3e6cb;
+    color: #155724;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .todo-title,
+    .todo-item {
+        grid-template-columns: 2fr 1fr 2fr 1fr auto auto;
+        /* Điều chỉnh cột */
+    }
+
+    .todo-top {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .todo {
+        padding: 15px;
+    }
+}
