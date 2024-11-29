@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaUser, FaPhone, FaLock } from "react-icons/fa";
 import './Forget.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { TodosContext } from '../../context/TodosContext';
 
 const Forget = () => {
-    const url = 'http://localhost:4000';
+    const {url} = useContext(TodosContext)
     const [data, setData] = useState({
         username: "",
         phone: "",
