@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const TodosContext = createContext(null);
 const TodosContextProvider = (props)=>{
-    const url = 'https://maiquoctuan.io.vn:4000'
+    const url = 'http://maiquoctuan.io.vn:4000'
     const [token,setToken] = useState("")
     const [userId, setUserId] = useState("")
 
