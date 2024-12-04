@@ -24,5 +24,5 @@ app.get("/",(req,res)=>{
 
 //callback function ()=>
 app.listen(port,()=>{
-    console.log(Server Started on http://localhost:${port})
+    console.log(`Server Started on http://localhost:${port}`)
 })
