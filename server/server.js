@@ -10,11 +10,6 @@ import 'dotenv/config';
 const app = express();
 const port = process.env.PORT || 4000;
 
-// Cấu hình HTTPS - đường dẫn tới chứng chỉ SSL
-const options = {
-    key: fs.readFileSync("/etc/letsencrypt/live/maiquoctuan.io.vn/privkey.pem"), // Private key
-    cert: fs.readFileSync("/etc/letsencrypt/live/maiquoctuan.io.vn/fullchain.pem"), // Certificate
-};
 
 app.use(express.json());
 app.use(cors());
