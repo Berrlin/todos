@@ -1,28 +1,34 @@
-import express from "express"
-import cors from "cors"
+import express from "express";
+import cors from "cors";
+import https from "https";
+import fs from "fs";
 import { connectDB } from "./config/db.js";
 import userRoute from "./routes/UserRoute.js";
-import 'dotenv/config'
 import todosRoute from "./routes/TodosRoute.js";
-
-
+import 'dotenv/config';
 
 const app = express();
-const port = process.env.PORT||4000;
+const port = process.env.PORT || 4000;
 
-app.use(express.json())
-app.use(cors())
+// Cấu hình HTTPS - đường dẫn tới chứng chỉ SSL
+const options = {
+    key: fs.readFileSync("/etc/letsencrypt/live/maiquoctuan.io.vn/privkey.pem"), // Private key
+    cert: fs.readFileSync("/etc/letsencrypt/live/maiquoctuan.io.vn/fullchain.pem"), // Certificate
+};
+
+app.use(express.json());
+app.use(cors());
 connectDB();
 
-app.use("/api/user",userRoute)
-app.use("/api/todos", todosRoute)
+// Routes
+app.use("/api/user", userRoute);
+app.use("/api/todos", todosRoute);
 
+app.get("/", (req, res) => {
+    res.send("API Working");
+});
 
-app.get("/",(req,res)=>{
-    res.send("API Working")
-})
-
-//callback function ()=>
-app.listen(port,()=>{
-    console.log(`Server Started on http://localhost:${port}`)
-})
+// Tạo HTTPS server
+https.createServer(options, app).listen(port, () => {
+    console.log(`HTTPS Server Started on https://maiquoctuan.io.vn:${port}`);
+});
